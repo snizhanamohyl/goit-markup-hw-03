@@ -29,6 +29,7 @@ h1,h2,h3,h4,h5,h6,p,ul {
 /* img */
 img {
     display: block;
+    max-width: 100%;
 }
 .container {
     margin-left: auto;
@@ -107,6 +108,10 @@ header > .container {
     margin-left: 50px;
 }
 .header-contact-link {
+    display: block;
+    padding-top: 32px;
+    padding-bottom: 32px;
+
     color: var(--second-primary-color);
     letter-spacing: 0.02em;
     line-height: 1.14;
@@ -146,8 +151,7 @@ section.no-bottom-padding {
 }
 
 .hero-btn {
-    height: 50px;
-    min-width: 216px;
+    padding: 10px 32px;
 
     font-weight: 700;
     font-size: 16px;
@@ -224,11 +228,13 @@ section.no-bottom-padding {
     display: flex;
 }
 
+.team-list .item {
+    background-color: var(--white);
+    border-radius: 0px 0px 4px 4px;
+}
+
 .team-list .item:not(:last-child) {
     margin-right: 30px;
-}
-.team-list-img{
-    margin-bottom: 30px;
 }
 
 .team-list-title {
@@ -240,13 +246,17 @@ section.no-bottom-padding {
     text-align: center;
 }
 .team-list-descr {
-    margin-bottom: 30px;
-
     font-size: 16px;
     line-height: 1.19;
     text-align: center;
     color: var(--second-primary-color)
 }
+
+.team-container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
 /* footer */
 .footer .logo {
     display: block;
@@ -322,18 +332,20 @@ section.no-bottom-padding {
 }
 
 .projects-list .item {
-    /* width: calc((100%-60px)/3); */
+    flex-basis: calc((100% - 60px) / 3);
     margin-right: 30px;
     margin-bottom: 30px;
     box-sizing: border-box;
 }
 
-.card-border {
-    border: 1px solid #EEEEEE;
-}
-
 .projects-list .item:nth-child(3n) {
     margin-right: 0px;
+}
+.card-border {
+    padding: 20px 24px;
+
+    border: 1px solid #EEEEEE;
+    border-top: 0px;
 }
 
 .projects {
@@ -341,9 +353,7 @@ section.no-bottom-padding {
 }
 
 .projects-list-title {
-    margin-top: 20px;
     margin-bottom: 4px;
-    margin-left: 24px;
 
     font-weight: 700;
     font-size: 18px;
@@ -351,14 +361,13 @@ section.no-bottom-padding {
     letter-spacing: 0.06em;
     color: var(--first-primary-color);
 }
-.projects-list-category {
-    margin-bottom: 20px;
-    margin-left: 24px;
 
+.projects-list-category {
     font-size: 16px;
     line-height: 1.86;    
     color: var(--second-primary-color);
 }
+
 .projects-btn {
     padding: 6px 22px;
 
@@ -373,8 +382,12 @@ section.no-bottom-padding {
     border-radius: 4px;
     border: none;
 }
+.projects-btn.main-btn {
+    padding: 6px 25px;
+}
 
 .projects-btn:hover,
 .projects-btn:focus {
     background-color: var(--accent-color);
     color:var(--white)
+}
